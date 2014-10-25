@@ -40,7 +40,8 @@ RUN \
   cd bison-$BISON_VERSION && \
   ./configure && \
   make -j`getconf _NPROCESSORS_ONLN` && \
-  make install
+  make install && \
+  rm -rf /tmp/* 
 
 # Get jq source.
 RUN git clone git://github.com/stedolan/jq.git && \
@@ -48,7 +49,8 @@ RUN git clone git://github.com/stedolan/jq.git && \
     autoreconf -i && \
     ./configure && \
     make -j`getconf _NPROCESSORS_ONLN` && \
-    make install
-
+    make install && \
+    rm -rf /tmp/*
+ 
 # Default command.
 CMD ["bash"]

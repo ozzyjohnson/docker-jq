@@ -15,6 +15,7 @@ RUN \
             --no-install-suggests \
     autoconf \
     automake \
+    curl \
     flex \
     git-core \
     libtool \
@@ -34,7 +35,7 @@ WORKDIR /tmp
 ENV BISON_VERSION 3.0.2
 RUN \
   wget \
-    http://ftpmirror.gnu.org/bison/bison-3.0.2.tar.gz && \
+    http://ftpmirror.gnu.org/bison/bison-$BISON_VERSION.tar.gz && \
   tar xzf bison-$BISON_VERSION.tar.gz && \
   cd bison-$BISON_VERSION && \
   ./configure && \

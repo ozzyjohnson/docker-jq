@@ -15,7 +15,6 @@ RUN \
             --no-install-suggests \
     autoconf \
     automake \
-    curl \
     flex \
     git-core \
     libtool \
